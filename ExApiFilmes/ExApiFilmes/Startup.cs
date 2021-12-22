@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ExApiFilmes.Service;
 
 namespace ExApiFilmes
 {
@@ -32,6 +33,11 @@ namespace ExApiFilmes
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ExApiFilmes", Version = "v1" });
             });
+            //---------------------------Jeitos de se instanciar um objeto-------------------------------------//
+            //Transient - Toda vez que for solicitado é criado a cada vez que são solicitados //
+            //Scoped - Criado uma vez por solicitado,ou seja, a cada request ele é criado //
+            //Singleton - Criado na primeira vez que são solicitados, ou seja, a API sobe ele cria a instancia//
+            services.AddSingleton<FilmesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
