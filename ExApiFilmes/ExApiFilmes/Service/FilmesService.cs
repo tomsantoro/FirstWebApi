@@ -41,6 +41,11 @@ namespace ExApiFilmes.Service
         {
             return filmes.Where(f => f.Titulo == titulo).FirstOrDefault();
         }
+        
+        public void AddFilmes(Filmes filme)
+        {
+            filmes.Add(filme);
+        }
        
     }
 }

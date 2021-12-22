@@ -33,7 +33,13 @@ namespace ExApiFilmes.Controllers
         {
             return service.GetFilme(titulo);
         }
-              
+        
+        [HttpPost]
+        public IActionResult Create(Filmes filme)
+        {
+            service.AddFilmes(filme);
+            return Ok();
+        }
 
     }
 }
